@@ -1,5 +1,6 @@
 import { SplitScreen } from './SplitScreen';
-import { LeftHand, RightHand } from './components';
+import LeftHand from './components/layout/LeftHand';
+import RightHand from './components/layout/RightHand';
 
 const App = () => {
   return (

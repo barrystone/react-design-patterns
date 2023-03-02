@@ -26,7 +26,6 @@ export const SplitScreen = ({
   rightWeight = 1
 }: splitScreenProps) => {
   const [left, right] = Children.toArray(children);
-  console.log('children', children);
 
   return (
     <Container>
