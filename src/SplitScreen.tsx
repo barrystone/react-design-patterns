@@ -1,13 +1,8 @@
 import styled from 'styled-components';
-
-interface leftAndRightComponentProps {
-  children?: React.ReactNode;
-  style?: React.CSSProperties;
-}
+import { Children } from 'react';
 
 interface splitScreenProps {
-  left: React.ComponentType<leftAndRightComponentProps>;
-  right: React.ComponentType<leftAndRightComponentProps>;
+  children?: React.ReactNode;
   leftWeight: number;
   rightWeight: number;
 }
@@ -26,19 +21,17 @@ const Pane = styled.div<paneProps>`
 `;
 
 export const SplitScreen = ({
-  left: Left,
-  right: Right,
+  children,
   leftWeight = 1,
   rightWeight = 1
 }: splitScreenProps) => {
+  const [left, right] = Children.toArray(children);
+  console.log('children', children);
+
   return (
     <Container>
-      <Pane weight={leftWeight}>
-        <Left />
-      </Pane>
-      <Pane weight={rightWeight}>
-        <Right />
-      </Pane>
+      <Pane weight={leftWeight}>{left}</Pane>
+      <Pane weight={rightWeight}>{right}</Pane>
     </Container>
   );
 };

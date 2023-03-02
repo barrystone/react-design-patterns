@@ -3,12 +3,10 @@ import { LeftHand, RightHand } from './components';
 
 const App = () => {
   return (
-    <SplitScreen
-      left={LeftHand}
-      right={RightHand}
-      leftWeight={1}
-      rightWeight={3}
-    ></SplitScreen>
+    <SplitScreen leftWeight={1} rightWeight={4}>
+      <LeftHand count={5} />
+      <RightHand content="example content!" />
+    </SplitScreen>
   );
 };
 
