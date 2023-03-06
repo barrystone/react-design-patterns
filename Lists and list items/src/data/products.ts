@@ -1,11 +1,11 @@
-interface productsInterface {
+export interface ProductsInterface {
   name: string;
   price: string;
   description: string;
   rating: number;
 }
 
-const products: Array<productsInterface> = [
+const products: Array<ProductsInterface> = [
   {
     name: 'Keyboard',
     price: 'NT3790',
