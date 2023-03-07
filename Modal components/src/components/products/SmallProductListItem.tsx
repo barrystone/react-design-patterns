@@ -2,11 +2,11 @@ import { FC } from 'react';
 import { ProductsInterface } from '../../data/products';
 
 interface SmallProductListitemProps {
-  products?: ProductsInterface;
+  product?: ProductsInterface;
 }
 
-const SmallProductListitem: FC<SmallProductListitemProps> = ({ products }) => {
-  const { name, price } = products ?? {};
+const SmallProductListItem: FC<SmallProductListitemProps> = ({ product }) => {
+  const { name, price } = product ?? {};
   return (
     <h3>
       {name} - {price}
@@ -14,4 +14,4 @@ const SmallProductListitem: FC<SmallProductListitemProps> = ({ products }) => {
   );
 };
 
-export default SmallProductListitem;
+export default SmallProductListItem;

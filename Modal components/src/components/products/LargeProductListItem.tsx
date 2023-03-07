@@ -2,11 +2,11 @@ import { FC } from 'react';
 import { ProductsInterface } from '../../data/products';
 
 interface LargeProductListitemProps {
-  products?: ProductsInterface;
+  product?: ProductsInterface;
 }
 
-const LargeProductListitem: FC<LargeProductListitemProps> = ({ products }) => {
-  const { name, price, description, rating } = products ?? {};
+const LargeProductListItem: FC<LargeProductListitemProps> = ({ product }) => {
+  const { name, price, description, rating } = product ?? {};
   return (
     <>
       <h3>{name}</h3>
@@ -14,9 +14,8 @@ const LargeProductListitem: FC<LargeProductListitemProps> = ({ products }) => {
       <h4>Description:</h4>
       <p>{description}</p>
       <p>Average Rating: {rating}</p>
-      <p>=====</p>
     </>
   );
 };
 
-export default LargeProductListitem;
+export default LargeProductListItem;
